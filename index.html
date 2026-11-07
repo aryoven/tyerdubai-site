@@ -1,0 +1,404 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tyer Dubai</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mobile tyre change across the UAE. We come to you. Tyer Dubai, Al Khawaneej, Dubai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Cairo:wght@500;700;800&display=swap">
+<style>
+/* Layout: mobile-first single column, road-sign condensed type, sticky call bar at the bottom */
+:root{
+  --bg:#F2F4F5;        /* cool concrete */
+  --surface:#FFFFFF;
+  --ink:#121518;       /* rubber black */
+  --muted:#5B636B;
+  --line:#D9DEE2;
+  --accent:#1D4ED8;    /* cobalt, the brand colour */
+  --accent-ink:#FFFFFF;
+  --mark:#FFC21A;      /* tyre-marking yellow, used only for size codes */
+  --wa:#1FA855;
+  --hero:#121518;
+  --hero-ink:#F2F4F5;
+  --hero-muted:#A7B0B8;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1113;--surface:#171B1F;--ink:#E9ECEE;--muted:#9AA3AB;--line:#2A3036;
+  --accent:#5B8BFF;--accent-ink:#0B0E12;--mark:#FFC21A;--wa:#2BC266;
+  --hero:#080A0C;--hero-ink:#F2F4F5;--hero-muted:#9AA3AB;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1113;--surface:#171B1F;--ink:#E9ECEE;--muted:#9AA3AB;--line:#2A3036;
+  --accent:#5B8BFF;--accent-ink:#0B0E12;--mark:#FFC21A;--wa:#2BC266;
+  --hero:#080A0C;--hero-ink:#F2F4F5;--hero-muted:#9AA3AB;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--hero)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.02;letter-spacing:.005em}
+h2{font-size:clamp(30px,6vw,44px);text-transform:uppercase}
+h3{font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+p{margin:0}
+.eyebrow{font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mark);outline-offset:2px;border-radius:4px}
+.size{font-family:var(--f-mono);font-weight:700;background:var(--mark);color:#121518;padding:1px 6px;border-radius:3px;white-space:nowrap}
+
+/* demo ribbon */
+.ribbon{background:var(--mark);color:#121518;font-size:13px;font-weight:600;text-align:center;padding-block:6px}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--hero);color:var(--hero-ink);border-bottom:1px solid #22282E}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{font-family:var(--f-display);font-weight:800;font-size:22px;letter-spacing:.05em;line-height:1;white-space:nowrap}
+.logo{min-width:0}
+.logo small{display:block;white-space:nowrap;font-size:10px;letter-spacing:.2em;color:var(--hero-muted);text-transform:uppercase;margin-top:3px}
+.top .call{font-family:var(--f-mono);font-weight:700;font-size:14px;text-decoration:none;background:var(--accent);color:#fff;padding:9px 12px;border-radius:8px;white-space:nowrap}
+
+/* hero */
+.hero{background:var(--hero);color:var(--hero-ink);overflow:hidden}
+.hero .wrap{display:grid;gap:28px;padding-block:36px 44px;grid-template-columns:1fr}
+.hero h1{font-size:clamp(52px,13vw,96px);font-weight:800;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--mark)}
+.hero .lede{color:var(--hero-muted);font-size:18px;max-width:34ch;margin-top:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid #2E353C;border-radius:999px;padding:5px 12px;font-size:14px;color:var(--hero-ink)}
+.chip strong{color:var(--mark);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:0 20px;border-radius:10px;font-family:var(--f-display);font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-call{background:var(--accent);color:#fff}
+.btn-wa{background:var(--wa);color:#fff}
+.btn:hover{filter:brightness(1.08)}
+.numline{margin-top:12px;font-size:14px;color:var(--hero-muted)}
+.numline span{font-family:var(--f-mono);color:var(--hero-ink);user-select:all}
+.tyre-art{justify-self:center;width:min(340px,80vw);aspect-ratio:1;max-width:100%}
+.tyre-art svg{width:100%;height:100%;display:block}
+@media (min-width:820px){.hero .wrap{grid-template-columns:1.2fr .8fr;align-items:center;padding-block:64px}}
+@media (prefers-reduced-motion:no-preference){.spin{animation:spin 28s linear infinite;transform-origin:200px 200px}@keyframes spin{to{transform:rotate(360deg)}}}
+
+/* sections */
+section{padding-block:52px}
+.sec-head{display:grid;gap:10px;margin-bottom:26px;max-width:60ch}
+.sec-head p{color:var(--muted)}
+
+/* quote builder */
+.quote{display:grid;gap:22px;grid-template-columns:1fr}
+@media (min-width:820px){.quote{grid-template-columns:1fr 1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+.how{display:grid;gap:14px;margin:0;padding:0;list-style:none;counter-reset:s}
+.how li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;counter-increment:s}
+.how li::before{content:counter(s);font-family:var(--f-display);font-weight:800;font-size:20px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink)}
+.how b{display:block}
+.how span{color:var(--muted);font-size:15px}
+.sidewall{margin-top:18px;border-top:1px dashed var(--line);padding-top:16px}
+.sidewall svg{width:100%;height:auto;display:block}
+.sidewall .legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;font-size:13px;color:var(--muted);text-align:center}
+.sidewall .legend b{display:block;font-family:var(--f-mono);color:var(--ink);font-size:15px}
+
+form .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+form .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field{display:grid;gap:5px;margin-bottom:14px;min-width:0}
+.field label,.field legend{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+select,input[type=text]{width:100%;font:500 16px var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 10px;min-width:0}
+select.mono{font-family:var(--f-mono);font-weight:700}
+fieldset{border:0;padding:0;margin:0 0 14px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:5px}
+.tier input{position:absolute;opacity:0;pointer-events:none}
+.tier span{display:grid;gap:2px;height:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 8px;cursor:pointer;background:var(--bg)}
+.tier span b{font-family:var(--f-display);font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+.tier span small{color:var(--muted);font-size:12.5px;line-height:1.3}
+.tier input:checked+span{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--surface)}
+.tier input:focus-visible+span{outline:3px solid var(--mark);outline-offset:2px}
+.preview{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14.5px;white-space:pre-wrap;color:var(--ink);margin-bottom:12px}
+.preview-label{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.btn-block{width:100%}
+
+/* services */
+.svc{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:700px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc article{display:grid;gap:8px;align-content:start;padding:20px;border-top:3px solid var(--ink);background:var(--surface)}
+.svc .tag{font-family:var(--f-mono);font-size:12.5px;color:var(--accent);font-weight:700}
+.svc p{color:var(--muted)}
+
+/* fee strip */
+.fee{background:var(--accent);color:#fff}
+.fee .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-block:28px}
+.fee .big{font-family:var(--f-display);font-weight:800;font-size:clamp(44px,10vw,72px);line-height:1}
+.fee .big small{font-size:.45em;letter-spacing:.06em;margin-left:6px}
+.fee p{max-width:36ch;opacity:.92}
+
+/* coverage */
+.areas{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:700px){.areas{grid-template-columns:repeat(4,1fr)}}
+.area h3{display:flex;align-items:center;gap:8px;font-size:20px;padding-bottom:8px;border-bottom:1px solid var(--line);margin-bottom:8px}
+.area h3 i{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block}
+.area.base h3 i{background:var(--mark);box-shadow:0 0 0 3px color-mix(in srgb,var(--mark) 35%,transparent)}
+.area ul{list-style:none;margin:0;padding:0;color:var(--muted);font-size:15px;display:grid;gap:3px}
+
+/* reviews slot */
+.slot{border:2px dashed var(--line);border-radius:14px;padding:24px;display:grid;gap:8px;color:var(--muted);text-align:center;justify-items:center}
+.slot .stars{font-size:22px;letter-spacing:4px;color:var(--mark)}
+
+footer{background:var(--hero);color:var(--hero-muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px}
+footer b{color:var(--hero-ink)}
+
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);
+  padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bar .btn{min-height:50px;font-size:18px}
+@media (min-width:820px){.bar{display:none}body{padding-bottom:0}}
+/* language toggle + Arabic */
+.top .right{display:flex;align-items:center;gap:8px}
+.lang{font:700 14px var(--f-body);background:transparent;color:var(--hero-ink);border:1px solid #3A424A;border-radius:8px;padding:8px 10px;cursor:pointer;min-height:38px}
+.lang:hover{border-color:var(--mark)}
+@media (max-width:420px){.logo small{display:none}.top .call{font-size:12.5px;padding:8px 9px}.logo b{font-size:20px}}
+html[lang=ar]{--f-display:"Cairo",Tahoma,sans-serif;--f-body:"Cairo",Tahoma,sans-serif}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] .eyebrow,html[lang=ar] .btn,html[lang=ar] .tag,html[lang=ar] .field label,html[lang=ar] .field legend,html[lang=ar] .preview-label,html[lang=ar] .tier span b,html[lang=ar] .fee .big small{text-transform:none;letter-spacing:0}
+html[lang=ar] h1{line-height:1.2}html[lang=ar] h2{line-height:1.25}
+.size,.numline span,.ltr,.top .call,select.mono{direction:ltr;unicode-bidi:isolate}
+.logo b{direction:ltr;unicode-bidi:isolate}
+.logo{flex:1 1 auto;min-width:0}.logo span{min-width:0}
+@media (max-width:420px){.logo b{font-size:18px;letter-spacing:.03em}.logo svg{width:34px;height:34px}}
+.sidewall svg,.tyre-art svg{direction:ltr}
+footer b{direction:ltr;unicode-bidi:isolate;display:inline-block}
+html[dir=rtl] .fee .big small{margin-left:0;margin-right:10px}
+html[lang=ar] .svc .tag{font-family:var(--f-body);font-size:14px}
+.lang{white-space:nowrap}
+</style>
+</head><body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Tyer Dubai home">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="#1D4ED8"/>
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#FFC21A" stroke-width="3" stroke-dasharray="4 3"/>
+        <circle cx="20" cy="20" r="8.5" fill="#121518"/>
+        <path d="M14.5 15h11v3h-4v9h-3v-9h-4z" fill="#fff"/>
+      </svg>
+      <span><b>TYER DUBAI</b><small data-i18n="tag">Your tyre experts · UAE</small></span>
+    </a>
+    <div class="right"><button class="lang" id="lang" type="button" lang="ar" aria-label="Switch language / تغيير اللغة">ع</button><a class="call" href="tel:+971551571183">055 157 1183</a></div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--mark)" data-i18n="emir">Dubai · Sharjah · Ajman · Abu Dhabi</p>
+        <h1 style="margin-top:10px" data-i18n="h1">Flat tyre?<br><em>We come</em> to you.</h1>
+        <p class="lede" data-i18n="lede"><strong style="color:var(--hero-ink)">Tyer Dubai, your mobile tyre experts.</strong> New tyres fitted at your home, office or roadside. Send us your tyre size and get prices for three brands in minutes.</p>
+        <div class="chips">
+          <span class="chip" data-i18n="c1"><strong>AED 150</strong> call-out</span>
+          <span class="chip" data-i18n="c2">Budget to premium brands</span>
+          <span class="chip" data-i18n="c3">Garage in Al Khawaneej</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-call" href="tel:+971551571183">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            <span data-i18n="callnow">Call now</span>
+          </a>
+          <a class="btn btn-wa" id="heroWa" href="https://wa.me/971551571183" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2 .7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+            <span data-i18n="wa">WhatsApp</span>
+          </a>
+        </div>
+        <p class="numline"><b data-i18n="numl" style="font-weight:400">Call or WhatsApp:</b> <span>+971 55 157 1183</span></p>
+      </div>
+      <div class="tyre-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <defs><path id="arc" d="M200,200 m-148,0 a148,148 0 1,1 296,0 a148,148 0 1,1 -296,0"/></defs>
+          <g class="spin">
+            <circle cx="200" cy="200" r="190" fill="#1B2025"/>
+            <circle cx="200" cy="200" r="190" fill="none" stroke="#2A3037" stroke-width="22" stroke-dasharray="10 8"/>
+            <circle cx="200" cy="200" r="165" fill="#161A1E"/>
+            <text font-family="JetBrains Mono, monospace" font-weight="700" font-size="21" fill="#FFC21A" letter-spacing="3">
+              <textPath href="#arc" startOffset="2%">225/45 R18 95W · TYER DUBAI · MOBILE FITTING · 24/7 ·</textPath>
+            </text>
+          </g>
+          <circle cx="200" cy="200" r="118" fill="#8C959E"/>
+          <circle cx="200" cy="200" r="104" fill="#5F6870"/>
+          <g fill="#8C959E">
+            <path d="M200 112 l14 70 h-28z"/><path d="M200 112 l14 70 h-28z" transform="rotate(72 200 200)"/>
+            <path d="M200 112 l14 70 h-28z" transform="rotate(144 200 200)"/><path d="M200 112 l14 70 h-28z" transform="rotate(216 200 200)"/>
+            <path d="M200 112 l14 70 h-28z" transform="rotate(288 200 200)"/>
+          </g>
+          <circle cx="200" cy="200" r="30" fill="#1D4ED8"/>
+          <circle cx="200" cy="200" r="11" fill="#121518"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="pim">Price in minutes</p>
+        <h2 data-i18n="qh">Tell us your size. We send the price.</h2>
+        <p data-i18n="qp">Tyre prices change with size and brand, so we quote every job directly. Build your request here and it opens in WhatsApp, ready to send.</p>
+      </div>
+      <div class="quote">
+        <div class="panel">
+          <ol class="how">
+            <li><div><b data-i18n="s1">Find your tyre size</b><span data-i18n="s1d">It is printed on the side of the tyre, like <span class="size">225/45 R18</span>.</span></div></li>
+            <li><div><b data-i18n="s2">Send it on WhatsApp</b><span data-i18n="s2d">Use the form, or just send a photo of the tyre side.</span></div></li>
+            <li><div><b data-i18n="s3">Choose from three prices</b><span data-i18n="s3d">Budget, mid-range and premium. Then we come and fit them.</span></div></li>
+          </ol>
+          <div class="sidewall">
+            <svg viewBox="0 0 360 110" role="img" aria-label="Where to read the tyre size: width 225, profile 45, rim 18 inches">
+              <path d="M10 100 Q180 -20 350 100" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round" opacity=".9"/>
+              <path id="sw" d="M40 98 Q180 -6 320 98" fill="none"/>
+              <text font-family="JetBrains Mono, monospace" font-weight="700" font-size="17" fill="#FFC21A" letter-spacing="2"><textPath href="#sw" startOffset="22%">225/45 R18 95W</textPath></text>
+            </svg>
+            <div class="legend">
+              <div><b>225</b><span data-i18n="lw">width, mm</span></div>
+              <div><b>45</b><span data-i18n="lp">profile, %</span></div>
+              <div><b>R18</b><span data-i18n="lr">rim, inches</span></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="panel" id="qform" novalidate>
+          <div class="row">
+            <div class="field"><label for="w" data-i18n="fw">Width</label><select id="w" class="mono"></select></div>
+            <div class="field"><label for="p" data-i18n="fp">Profile</label><select id="p" class="mono"></select></div>
+            <div class="field"><label for="r" data-i18n="fr">Rim</label><select id="r" class="mono"></select></div>
+          </div>
+          <fieldset>
+            <legend data-i18n="br">Brand range</legend>
+            <div class="tiers">
+              <label class="tier"><input type="radio" name="tier" id="t1" value="Budget"><span data-i18n="tb"><b>Budget</b><small>Chinese brands</small></span></label>
+              <label class="tier"><input type="radio" name="tier" id="t2" value="Mid-range" checked><span data-i18n="tm"><b>Mid</b><small>Korean, Taiwanese</small></span></label>
+              <label class="tier"><input type="radio" name="tier" id="t3" value="Premium"><span data-i18n="tp"><b>Premium</b><small>Michelin, Pirelli</small></span></label>
+            </div>
+          </fieldset>
+          <div class="row2">
+            <div class="field"><label for="q" data-i18n="fq">Tyres</label>
+              <select id="q"><option>1</option><option>2</option><option>3</option><option selected>4</option></select></div>
+            <div class="field"><label for="a" data-i18n="fa">Emirate</label>
+              <select id="a"><option value="Dubai" data-ar="دبي">Dubai</option><option value="Sharjah" data-ar="الشارقة">Sharjah</option><option value="Ajman" data-ar="عجمان">Ajman</option><option value="Abu Dhabi" data-ar="أبوظبي">Abu Dhabi</option></select></div>
+          </div>
+          <div class="field"><label for="loc" data-i18n="fl">Area (optional)</label><input type="text" id="loc" placeholder="e.g. Mirdif, Al Warqa, JLT" autocomplete="off"></div>
+          <p class="preview-label" data-i18n="ym">Your message</p>
+          <div class="preview" id="msg" aria-live="polite"></div>
+          <a class="btn btn-wa btn-block" id="send" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            <span data-i18n="gp">Get my price on WhatsApp</span>
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="fee">
+    <div class="wrap">
+      <div class="big" data-i18n="fee">AED 150<small>CALL-OUT</small></div>
+      <p data-i18n="feep">One clear service fee. Our team drives to you, removes the old tyres and fits the new ones on the spot.</p>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="wwd">What we do</p>
+        <h2 data-i18n="svh">Tyres, done where you are</h2>
+      </div>
+      <div class="svc">
+        <article data-i18n="sv1"><span class="tag">AT YOUR LOCATION</span><h3>Tyre replacement</h3><p>Home, office or parking. Pick the brand, we bring the tyres and fit them.</p></article>
+        <article data-i18n="sv2"><span class="tag">ON THE ROAD</span><h3>Flat tyre help</h3><p>Stuck with a flat? Call, share your location on WhatsApp and a driver heads out.</p></article>
+        <article data-i18n="sv3"><span class="tag">AL KHAWANEEJ</span><h3>Garage service</h3><p>Prefer to drive in? Visit our workshop and our mechanics take it from there.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow" data-i18n="cov">Coverage</p>
+        <h2 data-i18n="covh">Across the Emirates</h2>
+      </div>
+      <div class="areas" data-i18n="areas">
+        <div class="area base"><h3><i></i>Dubai</h3><ul><li>Al Khawaneej (our base)</li><li>Mirdif</li><li>Al Warqa</li><li>Deira · Al Qusais</li><li>Business Bay · Marina</li></ul></div>
+        <div class="area"><h3><i></i>Sharjah</h3><ul><li>Al Nahda</li><li>Muwaileh</li><li>Al Majaz</li></ul></div>
+        <div class="area"><h3><i></i>Ajman</h3><ul><li>Al Nuaimiya</li><li>Al Rashidiya</li><li>Al Jurf</li></ul></div>
+        <div class="area"><h3><i></i>Abu Dhabi</h3><ul><li>Call to book ahead</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" style="padding-top:0">
+    <div class="wrap">
+      <div class="slot">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <b style="color:var(--ink)" data-i18n="rv">Google reviews show here</b>
+        <p data-i18n="rvp">Once the Google Maps profile is connected, real customer reviews appear in this space.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Tyer Dubai</b><br><span data-i18n="addr">Al Khawaneej, Dubai, UAE</span></div>
+    <div><span data-i18n="cw">Call / WhatsApp</span><br><b style="font-family:var(--f-mono)">+971 55 157 1183</b></div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick contact">
+  <a class="btn btn-call" href="tel:+971551571183" data-i18n="bcall">Call</a>
+  <a class="btn btn-wa" id="barWa" href="https://wa.me/971551571183" target="_blank" rel="noopener" data-i18n="bwa">WhatsApp</a>
+</nav>
+
+<script>
+(function(){
+  var NUM='971551571183',LANG='en',TIER_AR={'Budget':'اقتصادي','Mid-range':'متوسط','Premium':'فاخر'};
+  var AR={"tag": "خبراء الإطارات · الإمارات", "emir": "دبي · الشارقة · عجمان · أبوظبي", "h1": "إطار مثقوب؟<br><em>نحن نأتي</em> إليك.", "lede": "<strong style=\"color:var(--hero-ink)\"><bdi>Tyer Dubai</bdi>، خبراء الإطارات المتنقلون.</strong> نركّب لك إطارات جديدة في بيتك أو مكتبك أو على الطريق. أرسل لنا مقاس الإطار واحصل على أسعار ثلاث فئات خلال دقائق.", "c1": "<strong>150 درهم</strong> رسوم الخدمة", "c2": "من الاقتصادية إلى الماركات الفاخرة", "c3": "ورشة في الخوانيج", "callnow": "اتصل الآن", "wa": "واتساب", "numl": "اتصال أو واتساب:", "pim": "السعر خلال دقائق", "qh": "أرسل المقاس، ونرسل لك السعر.", "qp": "تختلف أسعار الإطارات حسب المقاس والماركة، لذلك نسعّر كل طلب مباشرة. جهّز طلبك هنا وسيفتح في واتساب جاهزاً للإرسال.", "s1": "اعرف مقاس إطارك", "s1d": "مكتوب على جانب الإطار، مثل <span class=\"size\">225/45 R18</span>.", "s2": "أرسله عبر واتساب", "s2d": "استخدم النموذج، أو أرسل صورة لجانب الإطار.", "s3": "اختر من ثلاثة أسعار", "s3d": "اقتصادي ومتوسط وفاخر. ثم نأتي ونركّبها لك.", "lw": "العرض، مم", "lp": "الارتفاع، ٪", "lr": "قطر الجنط، إنش", "fw": "العرض", "fp": "الارتفاع", "fr": "الجنط", "br": "فئة الماركة", "tb": "<b>اقتصادي</b><small>ماركات صينية</small>", "tm": "<b>متوسط</b><small>كورية، تايوانية</small>", "tp": "<b>فاخر</b><small>ميشلان، بيريلي</small>", "fq": "عدد الإطارات", "fa": "الإمارة", "fl": "المنطقة (اختياري)", "ym": "رسالتك", "gp": "احصل على السعر عبر واتساب", "fee": "150 درهم<small>رسوم الخدمة</small>", "feep": "رسوم خدمة واضحة. يأتي فريقنا إليك، ويفك الإطارات القديمة ويركّب الجديدة في المكان.", "wwd": "خدماتنا", "svh": "إطاراتك، أينما كنت", "sv1": "<span class=\"tag\">في موقعك</span><h3>تبديل الإطارات</h3><p>في البيت أو المكتب أو الموقف. اختر الماركة، ونحضر الإطارات ونركّبها.</p>", "sv2": "<span class=\"tag\">على الطريق</span><h3>مساعدة الإطار المثقوب</h3><p>علقت بإطار مثقوب؟ اتصل وأرسل موقعك عبر واتساب، وسيتوجه إليك سائق.</p>", "sv3": "<span class=\"tag\">الخوانيج</span><h3>خدمة الورشة</h3><p>تفضّل الحضور بنفسك؟ زر ورشتنا وسيتولى الفنيون الباقي.</p>", "cov": "التغطية", "covh": "في جميع أنحاء الإمارات", "areas": "\n        <div class=\"area base\"><h3><i></i>دبي</h3><ul><li>الخوانيج (مقرّنا)</li><li>مردف</li><li>الورقاء</li><li>ديرة · القصيص</li><li>الخليج التجاري · المارينا</li></ul></div>\n        <div class=\"area\"><h3><i></i>الشارقة</h3><ul><li>النهدة</li><li>مويلح</li><li>المجاز</li></ul></div>\n        <div class=\"area\"><h3><i></i>عجمان</h3><ul><li>النعيمية</li><li>الراشدية</li><li>الجرف</li></ul></div>\n        <div class=\"area\"><h3><i></i>أبوظبي</h3><ul><li>اتصل للحجز مسبقاً</li></ul></div>\n      ", "rv": "تقييمات Google تظهر هنا", "rvp": "بعد ربط ملف Google Maps، تظهر هنا تقييمات العملاء الحقيقية.", "addr": "الخوانيج، دبي، الإمارات", "cw": "اتصال / واتساب", "bcall": "اتصال", "bwa": "واتساب"};
+  function fill(id,vals,sel){var s=document.getElementById(id);vals.forEach(function(v){var o=document.createElement('option');o.textContent=v;if(String(v)===String(sel))o.selected=true;s.appendChild(o);});}
+  var W=[];for(var i=155;i<=315;i+=10)W.push(i);
+  var P=[];for(var j=25;j<=80;j+=5)P.push(j);
+  var R=[];for(var k=13;k<=22;k++)R.push(k);
+  fill('w',W,225);fill('p',P,45);fill('r',R.map(function(x){return 'R'+x}),'R18');
+  var f=document.getElementById('qform'),msg=document.getElementById('msg'),send=document.getElementById('send');
+  function build(){
+    var tier=(f.querySelector('input[name=tier]:checked')||{}).value||'Mid-range';
+    var loc=document.getElementById('loc').value.trim();
+    var sel=document.getElementById('a');var place=(LANG==='ar'?sel.options[sel.selectedIndex].dataset.ar:sel.value)+(loc?' – '+loc:'');
+    var size='\u2066'+document.getElementById('w').value+'/'+document.getElementById('p').value+' '+document.getElementById('r').value+'\u2069';
+    var t=LANG==='ar'
+      ? 'مرحباً Tyer Dubai، أريد عرض سعر - from website\n'+'المقاس: '+size+'\n'+'عدد الإطارات: '+document.getElementById('q').value+'\n'+'الفئة: '+(TIER_AR[tier]||tier)+'\n'+'الموقع: '+place
+      : 'Hi Tyer Dubai, I need a price (from website)\n'+'Size: '+size+'\n'+'Tyres: '+document.getElementById('q').value+'\n'+'Brand range: '+tier+'\n'+'Location: '+place;
+    msg.textContent=t;
+    send.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(t);
+  }
+  f.addEventListener('input',build);f.addEventListener('change',build);
+  f.addEventListener('submit',function(e){e.preventDefault();});
+  function quickLinks(){var quick=encodeURIComponent(LANG==='ar'?'مرحباً Tyer Dubai، أحتاج مساعدة بخصوص الإطارات - from website':'Hi Tyer Dubai, I need help with my tyres (from website)');
+  document.getElementById('heroWa').href='https://wa.me/'+NUM+'?text='+quick;
+  document.getElementById('barWa').href='https://wa.me/'+NUM+'?text='+quick;}
+  var EN={};document.querySelectorAll('[data-i18n]').forEach(function(el){EN[el.dataset.i18n]=el.innerHTML;});
+  var locEl=document.getElementById('loc'),PH_EN=locEl.placeholder;
+  function setLang(l){LANG=l;var ar=l==='ar';
+    document.documentElement.lang=ar?'ar':'en';document.documentElement.dir=ar?'rtl':'ltr';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;el.innerHTML=ar?AR[k]:EN[k];});
+    [].forEach.call(document.getElementById('a').options,function(o){o.textContent=ar?o.dataset.ar:o.value;});
+    locEl.placeholder=ar?'مثال: مردف، الورقاء، JLT':PH_EN;
+    var b=document.getElementById('lang');b.textContent=ar?'EN':'ع';b.lang=ar?'en':'ar';
+    document.title=ar?'Tyer Dubai | إطارات متنقلة في الإمارات':'Tyer Dubai';
+    try{localStorage.setItem('td-lang',l)}catch(e){}
+    quickLinks();build();}
+  document.getElementById('lang').addEventListener('click',function(){setLang(LANG==='ar'?'en':'ar');if(history.replaceState)history.replaceState(null,'',LANG==='ar'?'#ar':location.pathname+location.search);});
+  var start='en';try{start=localStorage.getItem('td-lang')||'en'}catch(e){}
+  if(location.hash==='#ar')start='ar';if(location.hash==='#en')start='en';
+  setLang(start);
+})();
+</script>
+</body></html>
